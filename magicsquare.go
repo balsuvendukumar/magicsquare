@@ -14,11 +14,13 @@ type position struct {
 	col int
 }
 
+var EvenSizeError = errors.New("Size must be an odd number")
+
 // MagicSquare generates a magic square of a given size, which must be an odd
 // number.
 func MagicSquare(size int) (Square, error) {
 	if size%2 == 0 {
-		return nil, errors.New("Size must be an odd number")
+		return nil, EvenSizeError
 	}
 	// Initialize the square
 	s := make(Square, size)
