@@ -26,7 +26,7 @@ func sumColumn(s Square, column int) int {
 
 // TestSums ensures that all rows and columns sum up to the same value.
 func TestSums(t *testing.T) {
-	size := 5
+	size := 99
 	sq, err := MagicSquare(size)
 	if err != nil {
 		t.Fatal(err)
