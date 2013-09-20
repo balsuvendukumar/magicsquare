@@ -14,7 +14,7 @@ squares](http://en.wikipedia.org/wiki/Magic_square).
 
 ## Documentation
 
-See GoDoc for [automatically geneated API
+See GoDoc for [automatically generated API
 documentation](http://godoc.org/github.com/jmcvetta/magicsquare).
 
 
