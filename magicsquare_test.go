@@ -26,7 +26,7 @@ func sumColumn(s square, column int) int {
 
 // TestSums ensures that all rows and columns sum up to the same value.
 func TestSums(t *testing.T) {
-	size := 3
+	size := 5
 	sq, err := MagicSquare(size)
 	if err != nil {
 		t.Fatal(err)
@@ -44,4 +44,12 @@ func TestSums(t *testing.T) {
 		assert.Equal(t, sum0, sum1)
 
 	}
+	// TODO: Test diagonal sums
+}
+
+// TestEvenSize ensures that an error is returned if we request a magic square
+// of even size.
+func TestEvenSize(t *testing.T) {
+	_, err := MagicSquare(4)
+	assert.NotEqual(t, nil, err)
 }
