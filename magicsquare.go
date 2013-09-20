@@ -14,6 +14,8 @@ type position struct {
 	col int
 }
 
+// An EvenSizeError is returned when MagicSquare is called with an even number
+// for the size of the square.
 var EvenSizeError = errors.New("Size must be an odd number")
 
 // MagicSquare generates a magic square of a given size, which must be an odd
