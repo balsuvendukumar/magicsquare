@@ -13,7 +13,8 @@ type position struct {
 	col int
 }
 
-// MagicSquare generates a magic square of a given size.
+// MagicSquare generates a magic square of a given size, which must be an odd
+// number.
 func MagicSquare(size int) (Square, error) {
 	if size%2 == 0 {
 		return nil, errors.New("Size must be an odd number")
