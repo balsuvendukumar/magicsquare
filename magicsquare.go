@@ -6,6 +6,7 @@ package magicsquare
 
 import "errors"
 
+// A Square is a regular quadrilateral.
 type Square [][]int
 
 type position struct {
