@@ -8,7 +8,6 @@ import (
 	"flag"
 	"fmt"
 	"github.com/jmcvetta/magicsquare"
-	"github.com/kr/pretty"
 	"os"
 	"strconv"
 )
@@ -34,6 +33,11 @@ func main() {
 		flag.Usage()
 		return
 	}
-	pretty.Println(square)
+	for _, row := range square {
+		for _, col := range row {
+			fmt.Printf("%5v", col)
+		}
+		fmt.Printf("\n")
+	}
 
 }
