@@ -6,7 +6,7 @@ package magicsquare
 
 import "errors"
 
-type square [][]int
+type Square [][]int
 
 type position struct {
 	row int
@@ -14,12 +14,12 @@ type position struct {
 }
 
 // MagicSquare generates a magic square of a given size.
-func MagicSquare(size int) (square, error) {
+func MagicSquare(size int) (Square, error) {
 	if size%2 == 0 {
 		return nil, errors.New("Size must be an odd number")
 	}
 	// Initialize the square
-	s := make(square, size)
+	s := make(Square, size)
 	for i := 0; i < size; i++ {
 		s[i] = make([]int, size)
 	}

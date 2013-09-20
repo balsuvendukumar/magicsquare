@@ -16,7 +16,7 @@ func sumRow(row []int) int {
 	return sum
 }
 
-func sumColumn(s square, column int) int {
+func sumColumn(s Square, column int) int {
 	var sum int
 	for _, row := range s {
 		sum += row[column]
