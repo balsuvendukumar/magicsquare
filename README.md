@@ -18,8 +18,7 @@ squares](http://en.wikipedia.org/wiki/Magic_square).
 A working [Go](http://golang.org) installation is required to build `magicsquare`.
 
 ```bash
-$ # We go get 'magicsquare/magicsquare' to install the command line utility
-
+# We go get 'magicsquare/magicsquare' to install the command line utility
 $ go get github.com/jmcvetta/magicsquare/magicsquare
 
 $ magicsquare 7
