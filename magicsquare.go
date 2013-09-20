@@ -1,33 +1,31 @@
 // Copyright (c) 2013 Jason McVetta.  This is Free Software, released under the
 // terms of the GPL v3.  See http://www.gnu.org/copyleft/gpl.html for details.
 
-package main
+package magicsquare
 
-import (
-	"github.com/kr/pretty"
-)
+import "errors"
 
 type square [][]int
 
-type pition struct {
+type position struct {
 	row int
 	col int
 }
 
-const size = 3
-
-func main() {
+// MagicSquare generates a magic square of a given size.
+func MagicSquare(size int) (square, error) {
+	if size%2 == 0 {
+		return nil, errors.New("Size must be an odd number")
+	}
 	// Initialize the square
-	square := make([][]int, size)
+	s := make(square, size)
 	for i := 0; i < size; i++ {
-		square[i] = make([]int, size)
+		s[i] = make([]int, size)
 	}
 	// Start rightmost column, middle row
-	col := size - 1
-	row := (size / 2)
-	p := pition{row, col}
+	p := position{size / 2, size - 1}
 	for i := 1; true; i++ {
-		square[p.row][p.col] = i
+		s[p.row][p.col] = i
 		//
 		// Find next position
 		//
@@ -43,7 +41,7 @@ func main() {
 		} else {
 			n.row = size - 1
 		}
-		if square[n.row][n.col] == 0 {
+		if s[n.row][n.col] == 0 {
 			p = n
 			continue
 		}
@@ -54,7 +52,7 @@ func main() {
 		} else {
 			n.col = size - 1
 		}
-		if square[n.row][n.col] == 0 {
+		if s[n.row][n.col] == 0 {
 			p = n
 			continue
 		}
@@ -62,5 +60,5 @@ func main() {
 		break
 
 	}
-	pretty.Println(square)
+	return s, nil
 }
